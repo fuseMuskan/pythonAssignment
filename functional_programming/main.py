@@ -1,3 +1,5 @@
+from functools import reduce
+
 
 def square_numbers(numbers: list) -> list:
     """This function takes a list of integers as input and uses the
@@ -47,3 +49,18 @@ def filter_prime_numbers(numbers: list) -> list:
     """
     primes = list(filter(prime_number, numbers))
     return primes
+
+
+def concatenate_strings(words: list) -> str:
+    """This function takes a list of strings as input and
+    uses the reduce function to return a single string containing
+    the concatenation of all the elements
+
+    Args:
+        words (list): a list of strings
+
+    Returns:
+        sentence (str): concatenated form of the strings
+    """
+    sentence = reduce(lambda word, init_word: f"{word} {init_word}", words)
+    return sentence
