@@ -62,4 +62,33 @@ def create_ascci_dict() -> dict:
     return ascii_dict
 
 
+# Set Comprehension
+def create_unique_set(numbers: list) -> set:
+    """This function takes a list of integers and returns a 
+    set of numbers containing unique even numbers
 
+    Args:
+        numbers (list): a list of integers
+
+    Returns:
+        even_set (set): a set of unique even integers
+    """
+    even_set = {num for num in numbers if num % 2 == 0}
+    return even_set
+
+
+def common_characters(word_one: str, word_two:str) -> set:
+    """ This function takes two strings and returns a 
+    set of characters that are only common in them
+
+    Args:
+        word_one (str): first string
+        word_two (str): second string
+
+    Returns:
+        result_set (set): a set of characters
+    """
+    first_character_set = {char.lower() for char in word_one}
+    second_character_set = {char.lower() for char in word_two}
+    result_set = first_character_set.intersection(second_character_set)
+    return result_set
