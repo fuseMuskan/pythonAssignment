@@ -1,0 +1,32 @@
+# List Comprehension
+def more_than_five_characters(strs: list) -> list:
+    """The function takes a list of strings and returns
+    a list that only contains more than 5 characters
+
+    Args:
+        strs (list): a list of strings
+
+    Returns:
+        result (list): a list of strings having more than 5 characters
+    """
+
+    result = [word for word in strs if len(word) > 5]
+    return result
+
+
+def zero_sum_triplets(list_one: list, list_two: list, list_three: list) -> list:
+    """This function creates a unique triplets from list_one, list_two
+    and list_three (x, y, z) where x is from list_one, y is from list_two,
+    and z is from list_three, such that x + y + z = 0
+
+    Args:
+        list_one (list): a list of integers
+        list_two (list): a list of integers
+        list_three (list): a list of integers
+
+    Returns:
+        result (list): a list of integers
+    """
+    result = [(x, y, z) for x, y, z in zip(list_one, list_two, list_three) if x + y + z == 0]
+    result = list(set(result))
+    return result
