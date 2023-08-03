@@ -1,3 +1,5 @@
+import string
+
 # List Comprehension
 def more_than_five_characters(strs: list) -> list:
     """The function takes a list of strings and returns
@@ -46,3 +48,18 @@ def create_dictionary(keys_list: list, values_list: list) -> dict:
     """
     result_dict = {key: value for key, value in zip(keys_list, values_list)}
     return result_dict
+
+
+def create_ascci_dict() -> dict:
+    """This function returns a dictionary of keys having
+    lowercase alphabets and ascii values of those alphabets
+
+    Returns:
+        ascci_dict (dict): a dictionary containing alphabet and ascci value
+    """
+
+    ascii_dict = {key:ord(value) for key, value in zip(string.ascii_lowercase, string.ascii_lowercase)}
+    return ascii_dict
+
+
+
