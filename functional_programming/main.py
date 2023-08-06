@@ -1,0 +1,66 @@
+from functools import reduce
+
+
+def square_numbers(numbers: list) -> list:
+    """This function takes a list of integers as input and uses the
+    map function to return a new list containing the square of each
+    element.
+
+    Args:
+        numbers (list): a list of integers
+
+    Returns:
+        squares (list): square of the integers in the list
+    """
+    squares = list(map(lambda x: x**2, numbers))
+    return squares
+
+
+def prime_number(num: int) -> bool:
+    """This function takes a number a return whether the number
+    is prime number or not
+
+    Args:
+        num (int): any integer
+
+    Returns:
+        result (bool): True (if prime) else False
+    """
+    flag = 1
+    for i in range(2, num):
+        if num % i == 0:
+            flag = 0
+    if flag == 1:
+        return True
+    else:
+        return False
+
+
+def filter_prime_numbers(numbers: list) -> list:
+    """ This function takes a list of integers as input and uses the
+    filter function to return a new list containing only the prime
+    numbers.
+
+    Args:
+        numbers (list): a list of integers
+
+    Returns:
+        primes (list): prime numbers
+    """
+    primes = list(filter(prime_number, numbers))
+    return primes
+
+
+def concatenate_strings(words: list) -> str:
+    """This function takes a list of strings as input and
+    uses the reduce function to return a single string containing
+    the concatenation of all the elements
+
+    Args:
+        words (list): a list of strings
+
+    Returns:
+        sentence (str): concatenated form of the strings
+    """
+    sentence = reduce(lambda word, init_word: f"{word} {init_word}", words)
+    return sentence
