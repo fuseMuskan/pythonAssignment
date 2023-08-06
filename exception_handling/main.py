@@ -1,3 +1,4 @@
+""" This module consist of assignment related to exception handling."""
 # Arithmetic Exception
 def arthimetic_exception(num1: int, num2: int) -> int or float:
     """This function takes two take integers and peforms division
@@ -13,7 +14,7 @@ def arthimetic_exception(num1: int, num2: int) -> int or float:
         result = num1 / num2
         return result
     except ZeroDivisionError:
-        return ("Second number cannot be zero.")
+        return "Second number cannot be zero."
 
 
 # ValueError
@@ -31,13 +32,13 @@ def value_error_exception(user_input) -> int:
         result = int(user_input)
         return result
     except ValueError:
-        return ("Failed to convert to integer.")
+        return "Failed to convert to integer."
 
 
 # Custom Exception "Invalid Age Error"
 class InvalidAgeError(Exception):
     "Raised when the input value is between 0 and 120"
-    pass
+
 
 def user_age(age: int) -> str:
     """This function takes a user age and determines
@@ -52,14 +53,16 @@ def user_age(age: int) -> str:
     try:
         if age <= 0 or age >=120:
             raise InvalidAgeError
-        else:
-            return "Valid Age"
+        print("Valid Age")
+        return True
     except InvalidAgeError:
-        return "Age must be between 0 and 120"
+        print( "Age must be between 0 and 120")
+        return False
 
 # Custom Exception "Weak Password Error"
 class WeakPasswordError(Exception):
     "Raised when password is less than 8 characters"
+
 
 def check_password(password: str) -> str:
     """Check if the password is weak or strong
@@ -73,9 +76,6 @@ def check_password(password: str) -> str:
     try:
         if len(password) <= 8:
             raise WeakPasswordError
-        else:
-            return "Strong Password"
+        return "Strong Password"
     except WeakPasswordError:
         return "Password must be 8 characters long"
-
-
